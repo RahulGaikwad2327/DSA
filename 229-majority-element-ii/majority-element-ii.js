@@ -19,11 +19,11 @@ var majorityElement = function(nums) {
         }
         else if(count1 == 0){
             candidate1 = num;
-            count1++;
+            count1 = 1;
         }
         else if(count2 == 0){
             candidate2 = num;
-            count2++;
+            count2 = 1;
         }
         else{
             count1--;
