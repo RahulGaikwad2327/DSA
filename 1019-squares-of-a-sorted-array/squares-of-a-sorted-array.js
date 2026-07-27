@@ -17,7 +17,7 @@ var sortedSquares = function (nums) {
         if (a > b) {
             result[k] = a * a;
             left++;
-        
+
         } else {
 
             result[k] = b * b;
@@ -48,14 +48,14 @@ var sortedSquares = function (nums) {
 
 
 
-// Brute Force
+    // Brute Force
 
-// for(let i=0; i<nums.length; i++){
-//     nums[i]= nums[i]*nums[i];
-// }
+    // for(let i=0; i<nums.length; i++){
+    //     nums[i]= nums[i]*nums[i];
+    // }
 
-// nums.sort((a,b) => a-b);
+    // nums.sort((a,b) => a-b);
 
-// return nums;
-    
+    // return nums;
+
 };
