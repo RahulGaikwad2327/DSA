@@ -1,5 +1,6 @@
-class Solution(object):
-    def sortedSquares(self, nums):
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+
 
         result = [0] * len(nums)
 
@@ -22,3 +23,4 @@ class Solution(object):
             k -= 1
 
         return result
+        
