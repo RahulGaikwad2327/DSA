@@ -48,11 +48,6 @@ var sortedSquares = function (nums) {
 
 
 
-
-
-
-
-
 // Brute Force
 
 // for(let i=0; i<nums.length; i++){
