@@ -19,7 +19,7 @@ var threeSumClosest = function (nums, target) {
         while (left < right) {
             let sum = nums[i] + nums[left] + nums[right];
 
-            if (Math.abs(sum - target) < Math.abs(closestSum - target)) {
+            if (Math.abs(sum - target) <= Math.abs(closestSum - target)) {
                 closestSum = sum;
             }
 
