@@ -4,8 +4,9 @@
  * @return {string}
  */
 var minWindow = function(s, t) {
+    
     let map = new Map();
-    let windowmap = new Map();
+    let windowMap = new Map();
 
     let left = 0;
     let right = 0;
@@ -14,24 +15,24 @@ var minWindow = function(s, t) {
     let formed = 0;
 
     let min = Infinity;
-    let start =0;
+    let start = 0;
 
-    for(let i= 0; i<t.length; i++){
+    for(let i =0; i< t.length; i++){
         let char = t[i];
+
         if(!map.has(char)){
             required++;
         }
-          map.set(char, (map.get(char) || 0) + 1);
-
+        map.set(char, (map.get(char) || 0) +1);
     }
 
-    while(right < s.length){
+    while(right  < s.length){
         let char = s[right];
-
+        
         if(map.has(char)){
-            windowmap.set(char  , (windowmap.get(char) || 0) + 1);
+            windowMap.set(char , (windowMap.get(char) || 0) + 1);
 
-            if(windowmap.get(char) === map.get(char)){
+            if(windowMap.get(char) === map.get(char)){
                 formed++;
             }
         }
@@ -43,27 +44,31 @@ var minWindow = function(s, t) {
                 min = length;
                 start = left;
             }
+
             let leftchar = s[left];
 
             if(map.has(leftchar)){
-                windowmap.set(leftchar, windowmap.get(leftchar) - 1);
-            
+                windowMap.set(leftchar , windowMap.get(leftchar) -1);
 
-            if(windowmap.get(leftchar) < map.get(leftchar)){
-                formed--;
-            }
-            }
-            left++; 
+                if(windowMap.get(leftchar) < map.get(leftchar)){
+                    formed--;
+                }
 
+            }
+            left++;
         }
-        right++;
+
+     right++;
+
+
+    }
+       if(min === Infinity){
+            return "";
     }
 
-    if(min === Infinity){
-        return "";
-    }
+   return s.substring(start , start+min);
 
-    return s.substring(start , start+min);
+
 };
 
 
