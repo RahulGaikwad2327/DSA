@@ -4,26 +4,22 @@
  */
 var findDuplicate = function(nums) {
     
-    
-    
-    let slow = nums[0];
-    let fast = nums[0];
+   let slow = nums[0];
+   let fast = nums[0];
 
-    while(true){
-        slow = nums[slow];
-        fast = nums[nums[fast]];
+   while(true){
+    slow = nums[slow];
+    fast = nums[nums[fast]];
 
-        if(fast === slow){
-             break;
-        }
+    if(slow === fast){
+        break;
     }
-    slow = nums[0];
-
-    while(slow !== fast){
+   }
+   slow = nums[0];
+    while(fast !== slow){
         slow = nums[slow];
         fast = nums[fast];
     }
-
-    return slow;
+    return fast;
 
 };
