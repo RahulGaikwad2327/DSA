@@ -15,7 +15,7 @@ var maxProduct = function(nums) {
 
         currentMax = Math.max(num, num*prevMax, num*prevMin);
         currentMin = Math.min(num, num*prevMax, num*prevMin);
-        answer = Math.max(answer , currentMax);
+        answer = Math.max(answer , currentMax, currentMin);
 
     }
 
