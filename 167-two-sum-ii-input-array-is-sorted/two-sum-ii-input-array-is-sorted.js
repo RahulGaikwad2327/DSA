@@ -4,7 +4,7 @@
  * @return {number[]}
  */
 var twoSum = function(numbers, target) {
-    
+      numbers.sort((a, b) => a - b);
     
     let left = 0;
     let right = numbers.length - 1;
