@@ -13,7 +13,7 @@ class Solution:
                 count += mp.get(sum - k, 0)
 
             if sum in mp:
-                mp[sum] = mp.get(sum, 0) + 1
+                mp[sum] = mp.get(sum,) + 1
 
             else:
                 mp[sum] = 1
