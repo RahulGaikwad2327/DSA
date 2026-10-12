@@ -1,7 +1,7 @@
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
 
-        mp  = {}
+        mp = {0: -1}
         mp[0] = -1
         length = 0
         maxlength = 0
