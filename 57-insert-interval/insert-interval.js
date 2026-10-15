@@ -3,26 +3,30 @@
  * @param {number[]} newInterval
  * @return {number[][]}
  */
-var insert = function (intervals, newInterval) {
+var insert = function(intervals, newInterval) {
 
-    intervals.push(newInterval);
-    intervals.sort((a, b) => a[0] - b[0]);
+    let ans  = []
 
-    let ans = [];
-    ans.push(intervals[0]);
+    let i = 0;
 
-    for (let i = 1; i < intervals.length; i++) {
-        let current = intervals[i];
-        let last = ans[ans.length - 1];
+    while(i < intervals.length && intervals[i][1] < newInterval[0]){
+        ans.push(intervals[i])
+        i++
 
-        if (last[1] >= current[0]) {
-            last[1] = Math.max(last[1], current[1])
-
-        } else {
-            ans.push(current);
-        }
     }
 
-    return ans;
+    while(i < intervals.length && intervals[i][0] <= newInterval[1]){
 
+        newInterval[0] = Math.min(intervals[i][0], newInterval[0]);
+        newInterval[1] = Math.max(intervals[i][1], newInterval[1]);
+        i++
+    }
+    ans.push(newInterval);
+
+    while(i < intervals.length ){
+        ans.push(intervals[i]);
+        i++
+    }
+    return ans;
+    
 };
