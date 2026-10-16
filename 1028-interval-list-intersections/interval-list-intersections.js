@@ -17,23 +17,12 @@ var intervalIntersection = function (firstList, secondList) {
         let start2 = secondList[j][0];
         let end2 = secondList[j][1];
 
-        if (start1 <= start2) {
+        let s = Math.max(start1, start2);
+        let e  = Math.min(end1, end2);
 
-            if (end1 >= start2) {
-                let s = Math.max(start1, start2);
-                let e = Math.min(end1, end2);
-
-                ans.push([s, e]);
-            }
+        if(s <= e){
+            ans.push([s,e]);
         }
-            else {
-                if (end2 >= start1) {
-                    let s = Math.max(start1, start2);
-                    let e = Math.min(end1, end2);
-
-                    ans.push([s, e]);
-                }
-            }
 
         
         if (end1 <= end2) {
