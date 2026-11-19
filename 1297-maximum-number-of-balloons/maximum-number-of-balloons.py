@@ -5,10 +5,9 @@ class Solution:
 
         for char in text:
             
-            if char in mp:
-              mp[char] = mp.get(char) + 1
-            else:
-                mp[char] =  1
+            
+              mp[char] = mp.get(char, 0) + 1
+            
 
 
 
